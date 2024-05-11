@@ -158,22 +158,8 @@ jobs:
         name: Unofficial PBRP for ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
         tag_name: ${{ github.run_id }}
         body: |
-          Build: ${{ github.event.inputs.MANIFEST_BRANCH }}
-          Device: [Device Name](${{ github.event.inputs.DEVICE_NAME }})
-
-    - name: Upload to Release (if vendor_boot)
-      if: github.event.inputs.BUILD_TARGET == 'vendorboot'
-      uses: softprops/action-gh-release@v1
-      with:
-        files: |
-          android-recovery/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/vendor_boot.img
-          android-recovery/out/target/product/${{ github.event.inputs.DEVICE_NAME }}/PBRP*.zip
-        name: Unofficial PBRP for ${{ github.event.inputs.DEVICE_NAME }} // ${{ env.BUILD_DATE }}
-        tag_name: ${{ github.run_id }}
-        body: |
-          Build: ${{ github.event.inputs.MANIFEST_BRANCH }}
-          Device: [Device Tree/Branch](${{ github.event.inputs.DEVICE_TREE }}/tree/${{ github.event.inputs.DEVICE_TREE_BRANCH }})
-          Commit: Most recent [commit](${{ github.event.inputs.DEVICE_TREE }}/commit/${{ env.COMMIT_ID }}) during building.
+          Build: PBRP-4.0
+          Device: github.event.inputs.DEVICE_NAME
 
     - name: Run LDCheck (Only if LDCHECK was set to check.)
       if: github.event.inputs.LDCHECK == 'check'
