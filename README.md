@@ -1,5 +1,5 @@
 ## Custom Recovery Builder
-Compile your first custom recovery via Github Actions - with ldcheck setup. This workflow supports both TWRP and PBRP, you can use it with other custom recovery as well, but you have to modify the yaml config yourself.
+Compile your first custom recovery via Github Actions - with ldcheck setup.
 
 # How to Use
 1. Fork this repository.
