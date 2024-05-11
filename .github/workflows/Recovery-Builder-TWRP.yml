@@ -160,7 +160,7 @@ jobs:
         tag_name: ${{ github.run_id }}
         body: |
           Build: TWRP-3.7.1
-          Device: github.event.inputs.DEVICE_NAME
+          Device: NX769J
 
     - name: Run LDCheck
       run: |
