@@ -141,7 +141,8 @@ jobs:
         cd android-recovery
         source build/envsetup.sh
         sudo apt-get install -y libgflags-dev libgtest-dev libc++-dev clang
-        git clone https://android.googlesource.com/platform/external/gflags/ external/gflagsexport ALLOW_MISSING_DEPENDENCIES=true
+        git clone https://android.googlesource.com/platform/external/gflags/ external/gflags
+        export ALLOW_MISSING_DEPENDENCIES=true
         lunch ${{ env.DEVICE_MAKEFILE }}-eng && mka pbrp
       
     - name: Set Build Date # Output will be use in Release
